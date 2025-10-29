@@ -1,0 +1,202 @@
+/* src/components/ProjectShowcase.css */
+
+:root {
+  --ink: #0b2530;
+  --tint: #ffffff;
+  --panel: rgba(255,255,255,0.18);
+  --panel-border: rgba(255,255,255,0.35);
+  --panel-inner: rgba(255,255,255,0.22);
+  --brand: #11b5a4;
+}
+
+.project-hero {
+  position: relative;                 /* anchor absolutely-positioned hero image */
+  min-height: 88vh;
+  background: #2f5b61;                /* page backdrop */
+  overflow: hidden;
+  padding: 48px 24px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.project-title {
+  margin: 0 0 8px 0;
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1.05;
+  color: #fff;
+}
+
+.client-name {
+  margin: 0;
+  font-size: clamp(16px, 2vw, 24px);
+  color: #ddf7f2;
+  opacity: 0.9;
+}
+
+/* Large decorative image on right */
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: min(1100px, 70vw);
+  object-fit: cover;                   /* cover keeps aspect while filling box */
+  filter: none;
+  pointer-events: none;
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
+}
+
+/* Floating action button (+ / ×) - scoped to this component only */
+.project-fab {
+  position: absolute;                  /* Changed from fixed to absolute */
+  top: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid var(--panel-border);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px) saturate(160%);
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 30;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.project-fab:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+.project-fab.project-fab-close {
+  font-size: 36px;
+}
+
+/* Full-screen overlay - scoped to this component */
+.project-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+/* Frosted glass detail card - scoped to this component */
+.project-glass-card {
+  width: min(92vw, 1160px);
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 28px;
+  padding: clamp(16px, 3vw, 38px);
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) 1fr;
+  gap: clamp(16px, 3vw, 32px);
+  backdrop-filter: blur(22px) saturate(160%);
+}
+
+/* Left media column with inner rounded frame */
+.project-card-media {
+  display: grid;
+  place-items: center;
+}
+
+.project-media-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--panel-inner);
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  padding: clamp(10px, 2vw, 18px);
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Rotating image while dialog is open */
+.spin {
+  animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Right copy column */
+.project-card-copy {
+  color: #0c1e24;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.65;
+  background: linear-gradient(90deg, rgba(255,255,255,0.0), rgba(255,255,255,0.15));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.project-card-copy p { margin: 0 0 14px 0; }
+
+/* Learn More Button - styled to look like a link */
+.project-learn-button {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.project-learn-button:hover {
+  text-decoration: underline;
+}
+
+.project-learn-button:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.project-learn-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--ink);
+  transition: width 0.3s ease;
+}
+
+.project-learn-button:hover::after {
+  width: 100%;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .spin { animation: none; }
+  .project-learn-button::after { transition: none; }
+  .project-fab { transition: none; }
+}
