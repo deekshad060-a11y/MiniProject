@@ -1,0 +1,61 @@
+/* Full-width band */
+.hurdles-tape {
+  background: #ffffff;
+  padding-block: 12px;
+  width: 100%;               /* full row */
+}
+
+/* Full-width marquee container */
+.tape {
+  --gap: 2.0rem;
+  --speed: 28s;
+  width: 100%;               /* fill the row */
+  max-width: none;           /* remove previous cap */
+  margin: 0;                 /* no centering needed */
+  overflow: hidden;
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+
+  /* flat band look */
+  border-radius: 0;
+  padding: 8px 0;
+}
+
+/* Tracks and items remain the same */
+.tape__track {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+  gap: var(--gap);
+  align-items: center;
+  animation: tape-scroll var(--speed) linear infinite;
+}
+
+.tape__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #11b5a4;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: clamp(18px, 3.6vw, 40px);
+}
+
+.hurdle-svg {
+  width: clamp(18px, 3vw, 34px);
+  height: clamp(18px, 3vw, 34px);
+  object-fit: contain;
+  background-color: #11b5a4;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+@keyframes tape-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% - var(--gap))); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tape__track { animation: none; transform: none; }
+}

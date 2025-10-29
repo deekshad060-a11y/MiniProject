@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import "./HeroSection.css";
 import ChatWidget from "./ChatWidget";
 import ProjectShowcase from "./ProjectShowcase";
+import { FaCheckCircle } from "react-icons/fa";
+import { ReactComponent as BgCircle } from "./assets/circlesvg.svg";
+import CenterIcon from "./assets/center-icon.png";
+import HurdlesPage from "./HurdelsPage";
+import AboutTheRace from "./AboutTheRace";
+import signature from "./assets/signature.svg";
+import Alphabet from "./Albhabet";
 const HeroSection = () => {
   const lastScrollY = useRef(0);
   const [scrollDir, setScrollDir] = useState("down");
@@ -200,7 +207,7 @@ useEffect(() => {
 
 useEffect(() => {
     const items = document.querySelectorAll(".accomplish-item");
-    const centerIcon = document.querySelector(".circle-inner");
+    const centerIcon = document.querySelector(".accomplish-circle");
 
     // 👇 Animate left/right items with stagger
     const observer = new IntersectionObserver(
@@ -394,12 +401,11 @@ useEffect(() => {
         </div>
 
         <div className="accomplish-center">
-          <div className="circle-pattern">
-            <div className="circle-inner">
-              <img src="/Peca App.avif" alt="center-icon" />
-            </div>
-          </div>
-        </div>
+      <BgCircle className="accomplish-circle" />
+      <div className="center-icon-wrapper">
+        <img src={CenterIcon} alt="icon" className="center-icon" />
+      </div>
+    </div>
 
         <div className="accomplish-right">
           <div className="accomplish-item right">
@@ -424,95 +430,23 @@ useEffect(() => {
       </a>
     </section>
 
-      <section className="hurdles-section">
-        <div className="hurdles-banner">
-          <div className="hurdles-track">
-            <span>
-              <img src="/image.png" alt="" /> HURDLES &nbsp;
-              <img src="/image.png" alt="" /> HURDLES &nbsp;
-              <img src="/image.png" alt="" /> HURDLES &nbsp;
-            </span>
-            <span>
-              <img src="/image.png" alt="" /> HURDLES &nbsp;
-              <img src="/image.png" alt="" /> HURDLES &nbsp;
-              <img src="/image.png" alt="" /> HURDLES &nbsp;
-            </span>
-          </div>
-        </div>
-<div className="background">
-        {/* 🏁 About Race */}
-        <div className="about-race">
-          <h2>
-            ABOUT <br /> THE RACE
-          </h2>
-          <p>
-            This is a race of yourself to yourself.
-            <br />
-            Fight the race! Develop the website.
-            <br />
-            Complete the task.
-            <br />
-            As a developer, it’s Not That hard.
-          </p>
-        </div>
-        <div className="hurdles-image-container">
-            <img src="/img.png" alt="Hurdle 1" className="hurdle hurdle1" />
-            <img src="/img.png" alt="Hurdle 2" className="hurdle hurdle2" />
-            <img src="/img.png" alt="Hurdle 3" className="hurdle hurdle3" />
-            <img src="/img.png" alt="Hurdle 4" className="hurdle hurdle4" />
-          </div>
+      
 
-        </div>
-      </section>
-
-      {/* 🖼️ Zooming Hurdles */}
-      <section className="hurdles-image-section" ref={hurdlesRef}>
-        
-      </section>
-
-
+<section>
+  <HurdlesPage />
+</section>
+<section>
+  <AboutTheRace />
+</section>
 <section>
   <ProjectShowcase />
 </section>
 
-<section className="az-section">
-  {/* Left-side image card */}
-  <div className="az-image-card">
-    <div className="az-card-body">
-      <img
-        src={`/bg-${activeLetter || "A"}.jpg`}
-        alt="background grid"
-        className="az-background-img"
-      />
-      <img
-        src={`/${activeLetter || "A"}.png`}
-        alt={activeLetter || "A"}
-        className="az-letter-overlay show"
-      />
-    </div>
-  </div>
 
-  {/* Right-side grid */}
-  <div className="az-grid">
-    {["A", "B", "C", "D", "E", "F"].map((letter) => (
-      <div
-        key={letter}
-        className={`az-box ${activeLetter === letter ? "active" : ""}`}
-        onMouseEnter={() => setActiveLetter(letter)} // hover updates image
-        onClick={() => setActiveLetter(letter)} // click keeps it
-      >
-        {letter}
-      </div>
-    ))}
-    <div className="az-text">
-  <h3>A-Z PROJECT</h3>
-  <p>It’s over to you. Download our library of <br></br>transparent video letters and add them <br></br>to your next project.</p>
-</div>
-  </div>
-  
+
+<section>
+  <Alphabet />
 </section>
-
-
 
 
 
@@ -649,7 +583,12 @@ useEffect(() => {
     <div className="footer-bottom">
       <p>© 2035 by Brington Inc</p>
       <p>
-        Built with love and caffeine by <span className="signature">☕</span>
+        Built with love and caffeine by <span className="signature">
+          <img
+              src={signature}
+              alt="signature"
+              style={{ height: 24, verticalAlign: "middle", marginLeft: 9, filter: "invert(1)" }}
+            /></span>
       </p>
     </div>
   </footer>

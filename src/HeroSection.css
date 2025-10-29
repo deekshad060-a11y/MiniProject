@@ -10,73 +10,85 @@ body {
   background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* ⬅️ Aligns everything to the left */
   justify-content: flex-start;
-  padding: 40px 20px;
+  padding: 40px 80px; /* ⬅️ Adds left spacing similar to your HomePage example */
   color: white;
   font-family: "Poppins", sans-serif;
   position: relative;
 }
 
+/* 🔸 Navbar */
 .navbar {
   width: 90%;
   background-color: #ff875d;
   border-radius: 40px;
   padding: 15px 0;
   display: flex;
-  justify-content: flex-end; /* aligns right */
+  justify-content: flex-start; /* ⬅️ Moves content to left */
   align-items: center;
   font-size: 18px;
   font-weight: 400;
   color: white;
   margin-top: 10px;
+  padding-left: 60px; /* ⬅️ Adds consistent left gap */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .navbar span {
-  margin-right: 380px; /* adjust this number to move closer or further */
   cursor: pointer;
-
+  transition: 0.2s;
+  margin-left:700px
 }
 
-.navbar span:hover{
+.navbar span:hover {
   text-decoration: underline;
 }
+
+/* 🔸 Hero Content */
 .hero-content {
-  width: 90%;
-  margin: 0 auto 0 auto; /* center within same width range */
+  margin-top: 2px; /* ⬅️ Moves text down from navbar */
   text-align: left;
+  max-width: 700px; /* ⬅️ Controls text width */
 }
 
-
 .hero-title {
-  margin-top: 0px;
-  font-size: 100px;
-  font-weight: 400;
+  font-size: 6rem; /* Similar to your HomePage style */
+  font-weight: 600;
   line-height: 0.9;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-  font-size: 2.0vw;
-  line-height: 1.0;
+  font-size: 1.8rem;
+  line-height: 0.9;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
+/* 🔸 Button */
 .hero-btn {
-  background-color: #ff4fd8;
-  color:black;
+  background-color: #dc66e4;
+  color: #000;
   border: none;
   padding: 18px 60px;
   border-radius: 50px;
   font-size: 1.2rem;
-  margin-top: 20px;
+  margin-top: 30px;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
-.hero-btn:hover{
+
+.hero-btn:hover {
   background-color: #00c389;
   color: white;
-
+  transform: scale(1.05);
 }
+
+/* 🔸 Chat button (no change needed) */
 .chat-btn {
   position: fixed;
   right: 25px;
@@ -91,6 +103,7 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 /* 📊 Numbers Section */
 .numbers-section {
@@ -397,6 +410,38 @@ body {
   color: black;
   position: relative;
   overflow: hidden;
+}
+.accomplish-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.accomplish-circle {
+  width: 500px;
+  height: 500px;
+  max-width: 90vw;
+  max-height: 90vw;
+  opacity: 0.9;
+}
+
+.center-icon-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  
+}
+
+.center-icon {
+  width: 80px;
+  height: 80px;
 }
 /* Default hidden state */
 .accomplish-item {

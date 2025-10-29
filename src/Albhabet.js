@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import avideo from "../assets/avideo.mp4";
-import bvideo from "../assets/bvideo.mp4";
-import cvideo from "../assets/cvideo.mp4";
-import dvideo from "../assets/dvideo.mp4";
-import evideo from "../assets/evideo.mp4";
-import fvideo from "../assets/fvideo.mp4";
-
-import alphafoot from "../assets/alphafoot.jpg";
-import gridfoot from "../assets/gridfoot.jpg";
+import avideo from "./assets/avideo.mp4";
+import bvideo from "./assets/bvideo.mp4";
+import cvideo from "./assets/cvideo.mp4";
+import dvideo from "./assets/dvideo.mp4";
+import evideo from "./assets/evideo.mp4";
+import fvideo from "./assets/fvideo.mp4";
+import image from "./assets/image.png";
+import alphafoot from "./assets/alphafoot.jpg";
+import gridfoot from "./assets/gridfoot.jpg";
 
 const Alphabet = () => {
   const [activeLetter, setActiveLetter] = useState("A");
@@ -118,7 +118,7 @@ const Alphabet = () => {
           playsInline
           style={videoStyle}
         />
-        <img src={gridfoot} alt="Grid Footer" style={imageStyle} />
+        <img src={image} alt="Grid Footer" style={imageStyle} />
       </div>
 
       <div style={rightStyle}>
