@@ -336,10 +336,7 @@ useEffect(() => {
 
   </svg>
 
-  <div className="star">
-    <div className="star-core"></div>
-    <div className="star-glow"></div>
-  </div>
+  
 
   <div className="sparkle-item" style={{ top: "200px", left: "50%" }}>
   <div className="sparkle-content">
@@ -349,7 +346,7 @@ useEffect(() => {
   <div className="sparkle-sub">Sample Data about Sample Things</div>
 </div>
 
-  <div className="sparkle-item" style={{ top: "400px", left: "50%" }}>
+  <div className="sparkle-item" style={{ top: "600px", left: "50%" }}>
   <div className="sparkle-content">
     <div className="small-star"></div>
     <div className="big-number">2</div>
@@ -357,7 +354,7 @@ useEffect(() => {
   <div className="sparkle-sub">Sample Data about Sample Things</div>
 </div>
 
-  <div className="sparkle-item" style={{ top: "600px", left: "50%" }}>
+  <div className="sparkle-item" style={{ top: "1000px", left: "50%" }}>
   <div className="sparkle-content">
     <div className="small-star"></div>
     <div className="big-number">34</div>
@@ -365,7 +362,7 @@ useEffect(() => {
   <div className="sparkle-sub">Sample Data about Sample Things</div>
 </div>
 
-  <div className="sparkle-item" style={{ top: "800px", left: "50%" }}>
+  <div className="sparkle-item" style={{ top: "1400px", left: "50%" }}>
   <div className="sparkle-content">
     <div className="small-star"></div>
     <div className="big-number">25</div>
