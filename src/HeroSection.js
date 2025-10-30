@@ -7,8 +7,13 @@ import { ReactComponent as BgCircle } from "./assets/circlesvg.svg";
 import CenterIcon from "./assets/center-icon.png";
 import HurdlesPage from "./HurdelsPage";
 import AboutTheRace from "./AboutTheRace";
-import signature from "./assets/signature.svg";
 import Alphabet from "./Albhabet";
+import Newsletter from "./NewsLetters";
+import Speakers from "./Speakers";
+import Accomplish from "./Accomplish";
+import Sparkel from "./Sparkel";
+import Numbers from "./Numbers";
+import HeroBanner from "./HeroBanner";
 const HeroSection = () => {
   const lastScrollY = useRef(0);
   const [scrollDir, setScrollDir] = useState("down");
@@ -16,7 +21,6 @@ const HeroSection = () => {
 const [activeLetter, setActiveLetter] = useState("A");
 const [clickedLetter, setClickedLetter] = useState(null);
 const [showProjectOverlay, setShowProjectOverlay] = useState(false);
-
   // Track scroll direction
   useEffect(() => {
     const handleScrollDir = () => {
@@ -204,229 +208,27 @@ useEffect(() => {
   return () => observer.disconnect();
 }, []);
 
-
-useEffect(() => {
-    const items = document.querySelectorAll(".accomplish-item");
-    const centerIcon = document.querySelector(".accomplish-circle");
-
-    // 👇 Animate left/right items with stagger
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elements = [...items];
-            elements.forEach((el, index) => {
-              setTimeout(() => el.classList.add("show"), index * 200);
-            });
-            centerIcon.classList.add("show-center");
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    items.forEach((item) => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
   // ... your remaining JSX (unchanged)
 
   return (
     <div>
-      {/* 🌅 Hero Section */}
-      <div
-        className="hero-container"
-        style={{
-          backgroundImage: "url('/hero.jpeg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="navbar">
-        <span
-            onClick={() => (window.location.href = "https://www.brington.in/")}
-            style={{ cursor: "pointer" }}
-        >
-        Home
-        </span>
-        </div>
+     
 
-        <div className="hero-content">
-  <h1 className="hero-title">I am a Sample<br></br> Website</h1>
-  <p className="hero-subtitle">
-    I'm a Sample <br></br>Website, Create me <br></br>as same as I am, <br />
-    Don't Do any <br></br>Mistakes.
-  </p>
-  <button
-    className="hero-btn"
-    onClick={() => (window.location.href = "https://www.brington.in/")}
-  >
-    Get Started
-  </button>
-</div>
-        <ChatWidget />
-      </div>
+<section>
+  <HeroBanner />
+</section>
 
-     {/* 📊 Numbers Section */}
-<div className="numbers-section">
-  <h3>Sample Numbers</h3>
-  <h2>Row No. 1</h2>
-  <div className="scroll-wrapper">
-    <div className="scroll-row row1">
-      <div className="number-box">
-      61<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-        73<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-      89<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-       102<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-       +102<span className="unit-right">Unit</span>
-      </div>
-    </div>
-  </div>
-
-  <h3>Sample Numbers</h3>
-  <h2>Row No. 2</h2>
-  <div className="scroll-wrapper">
-    <div className="scroll-row row2">
-      <div className="number-box">
-        49<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-        59<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-        71<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-        81<span className="unit-right">Unit</span>
-      </div>
-      <div className="number-box">
-        +81<span className="unit-right">Unit</span>
-      </div>
-    </div>
-  </div>
-</div>
+<section>
+  <Numbers />
+</section>
 
 
-{/* ✨ Sparkle Section with Curved Dotted Snake and Animated Numbers */}
-<div className="sparkle-section">
-  <svg
-    className="sparkle-path-svg"
-    viewBox="0 0 400 1600"
-    preserveAspectRatio="none"
-  >
-    <path
-  id="mainSnakePath"
-  d="M200 50 
-     C350 250, 50 500, 300 700 
-     S100 1100, 250 1350 
-     S300 1600, 200 1550"
-  stroke="#ffffffa5"
-  strokeWidth="3"
-  strokeDasharray="8 14"
-  fill="none"
-/>
-
-  </svg>
-
-  
-
-  <div className="sparkle-item" style={{ top: "200px", left: "50%" }}>
-  <div className="sparkle-content">
-    <div className="small-star"></div>
-    <div className="big-number">1,034</div>
-  </div>
-  <div className="sparkle-sub">Sample Data about Sample Things</div>
-</div>
-
-  <div className="sparkle-item" style={{ top: "600px", left: "50%" }}>
-  <div className="sparkle-content">
-    <div className="small-star"></div>
-    <div className="big-number">2</div>
-  </div>
-  <div className="sparkle-sub">Sample Data about Sample Things</div>
-</div>
-
-  <div className="sparkle-item" style={{ top: "1000px", left: "50%" }}>
-  <div className="sparkle-content">
-    <div className="small-star"></div>
-    <div className="big-number">34</div>
-  </div>
-  <div className="sparkle-sub">Sample Data about Sample Things</div>
-</div>
-
-  <div className="sparkle-item" style={{ top: "1400px", left: "50%" }}>
-  <div className="sparkle-content">
-    <div className="small-star"></div>
-    <div className="big-number">25</div>
-  </div>
-  <div className="sparkle-sub">Sample Data about Sample Things</div>
-</div>
-
-</div>
-
-
-
-      <section className="accomplish-section">
-      <h2 className="accomplish-heading">
-        Accomplish<br /> Anything in <br /> Developing
-      </h2>
-      <p className="accomplish-subtext">
-        This is the space to introduce the Services section. Briefly describe
-        the <br />types of services offered and  highlight any special benefits or
-        features.
-      </p>
-
-      <div className="accomplish-container">
-        <div className="accomplish-left">
-          <div className="accomplish-item left">
-            <span className="bullet"></span> Sample Text 1
-          </div>
-          <div className="accomplish-item left">
-            <span className="bullet"></span> Sample Text
-          </div>
-          <div className="accomplish-item left">
-            <span className="bullet"></span> Sample Text
-          </div>
-        </div>
-
-        <div className="accomplish-center">
-      <BgCircle className="accomplish-circle" />
-      <div className="center-icon-wrapper">
-        <img src={CenterIcon} alt="icon" className="center-icon" />
-      </div>
-    </div>
-
-        <div className="accomplish-right">
-          <div className="accomplish-item right">
-            <span className="bullet"></span> Sample Text
-          </div>
-          <div className="accomplish-item right">
-            <span className="bullet"></span> Sample Text
-          </div>
-          <div className="accomplish-item right">
-            <span className="bullet"></span> Sample Text
-          </div>
-        </div>
-      </div>
-
-      <a
-        href="https://www.brington.in/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="create-btn"
-      >
-        Create  Now!
-      </a>
-    </section>
-
+<section>
+  <Sparkel />
+</section>
+<section> 
+  <Accomplish />
+</section>
       
 
 <section>
@@ -448,150 +250,15 @@ useEffect(() => {
 
 
 
-{/* 🎤 Speakers Section */}
-<section className="speakers-section">
-  <h2 className="speakers-heading">Speakers</h2>
 
-  <div className="speakers-grid">
-    {[
-      {
-        name: "Harry Williams",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker2.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Akira Lee",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker8.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Veronika Zakharova",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker3.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Ann Jacobs",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker7.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Lissa Cross",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker4.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Murty Yang",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker5.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Sheldon Smith",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker1.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-      {
-        name: "Jason Guhl",
-        role: "Director of Mobile Gaming, Fixer",
-        img: "/speaker6.jpg",
-        link: "https://www.linkedin.com/company/wix-com"
-      },
-    ].map((speaker, index) => (
-      <div
-        key={index}
-        className={`speaker-card animate-on-scroll`}
-        style={{ transitionDelay: `${index * 0.2}s` }}
-      >
-        <div className="speaker-info">
-          <img src={speaker.img} alt={speaker.name} className="speaker-img" />
-          <div>
-            <h3>{speaker.name}</h3>
-            <p>{speaker.role}</p>
-          </div>
-          <button
-            className="linkedin-btn"
-            onClick={() => window.open(speaker.link, "_blank")}
-          >
-            LinkedIn
-          </button>
-        </div>
-      </div>
-    ))}
-  </div>
+<section>
+  <Speakers />
 </section>
 
 
-
-{/* 📰 Newsletter + Footer Section */}
-<section className="newsletter-section">
-  <div className="newsletter-content">
-    <h2>
-      Be the First to Receive the Latest <br /> News
-    </h2>
-    <button className="newsletter-btn">
-      Sign Up <span>→</span>
-    </button>
-  </div>
-
-  <footer className="footer">
-    <div className="footer-top">
-      <div className="footer-brand">
-  <div className="footer-logo"></div>
-  <p className="brand-name">Brington</p>
-</div>
-
-
-      <div className="footer-links">
-        <div>
-          <h4>Navigation</h4>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Social</h4>
-          <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Youtube</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Contact</h4>
-          <ul>
-            <li>info@mysite.com</li>
-            <li>Tel. 123-456-7890</li>
-            <li>India</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div className="footer-bottom">
-      <p>© 2035 by Brington Inc</p>
-      <p>
-        Built with love and caffeine by <span className="signature">
-          <img
-              src={signature}
-              alt="signature"
-              style={{ height: 24, verticalAlign: "middle", marginLeft: 9, filter: "invert(1)" }}
-            /></span>
-      </p>
-    </div>
-  </footer>
+<section>
+  <Newsletter />
 </section>
-
-
     </div>
   );
 };

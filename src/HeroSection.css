@@ -1,6 +1,3 @@
-body {
-  font-family: "Poppins", sans-serif;
-}
 
 
 /* 🌅 Hero Section */
@@ -12,7 +9,8 @@ body {
   flex-direction: column;
   align-items: flex-start; /* ⬅️ Aligns everything to the left */
   justify-content: flex-start;
-  padding: 40px 80px; /* ⬅️ Adds left spacing similar to your HomePage example */
+  padding: 20px 40px 20px;
+  padding-right: 40px; /* ⬅️ Adds left spacing similar to your HomePage example */
   color: white;
   font-family: "Poppins", sans-serif;
   position: relative;
@@ -20,17 +18,17 @@ body {
 
 /* 🔸 Navbar */
 .navbar {
-  width: 90%;
+  width: 96%;
   background-color: #ff875d;
-  border-radius: 40px;
-  padding: 15px 0;
+  border-radius: 20px;
+  padding: 22px 0;
   display: flex;
   justify-content: flex-start; /* ⬅️ Moves content to left */
   align-items: center;
   font-size: 18px;
   font-weight: 400;
   color: white;
-  margin-top: 10px;
+  margin-top: 2px;
   padding-left: 60px; /* ⬅️ Adds consistent left gap */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
@@ -47,22 +45,23 @@ body {
 
 /* 🔸 Hero Content */
 .hero-content {
-  margin-top: 2px; /* ⬅️ Moves text down from navbar */
+  margin-top: 0px; /* ⬅️ Moves text down from navbar */
   text-align: left;
   max-width: 700px; /* ⬅️ Controls text width */
 }
 
 .hero-title {
   font-size: 6rem; /* Similar to your HomePage style */
-  font-weight: 600;
+  font-weight: 300;
   line-height: 0.9;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
+  margin-top: 6px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-  font-size: 1.8rem;
-  line-height: 0.9;
+  font-size: 1.9rem;
+  line-height: 1.1;
   color: #f1f1f1;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
@@ -74,10 +73,10 @@ body {
   border: none;
   padding: 18px 60px;
   border-radius: 50px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 30px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 300;
   transition: all 0.3s ease;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
@@ -156,7 +155,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #fff3f3 0%, #e49797 80%);
+  background: linear-gradient(to bottom, #fff3f3 0%, #e1a1a1 80%);
   color: #000;
   letter-spacing: 1px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -402,9 +401,9 @@ body {
   text-align: center;
   background: linear-gradient(
     135deg,
-    rgb(87, 84, 84) 0%,   /* starts here */
-    rgb(87, 84, 84) 50%,  /* covers 80% */
-    #5ca4ff 90%,          /* next 10% */
+    rgb(72, 71, 71) 0%,   /* starts here */
+    rgb(87, 84, 84) 40%,  /* covers 80% */
+    #4c96f0 80%,          /* next 10% */
     #d881ff 100%          /* last 10% */
   );
   color: black;
@@ -417,14 +416,16 @@ body {
   justify-content: center;
   align-items: center;
   flex: 1 1 auto;
+ 
 }
 
 .accomplish-circle {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   max-width: 90vw;
   max-height: 90vw;
-  opacity: 0.9;
+  opacity: 0.6;
+   filter: brightness(0.3);
 }
 
 .center-icon-wrapper {
@@ -432,16 +433,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
 
   
 }
 
 .center-icon {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 /* Default hidden state */
 .accomplish-item {
@@ -469,7 +470,7 @@ body {
 .accomplish-heading {
   margin-top:0px;
   font-size: 100px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 0px;
 }
 
@@ -498,10 +499,11 @@ body {
 .accomplish-item {
   display: flex;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid white;
   padding-bottom: 8px;
+  padding-left: 20px;
   width: 250px;
 }
 
@@ -946,7 +948,7 @@ body {
 .speaker-info p {
   margin: 5px 0 0;
   font-size: 0.95rem;
-  color: #666;
+  color: #d2c9c9;
 }
 
 /* Responsive layout */
@@ -995,20 +997,20 @@ body {
 .newsletter-section {
   background: #000;
   color: #fff;
-  padding: 40px 5% 40px;
-  font-family: "Poppins", sans-serif;
+  padding: 2px 50px 40px;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .newsletter-content {
   text-align: left;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 .newsletter-content h2 {
-  font-size: 4rem;
-  font-weight: 700;
+  font-size: 6rem;
+  font-weight: 600;
   line-height: 1.1;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .newsletter-btn {
@@ -1042,8 +1044,8 @@ body {
 
 /* Footer styles */
 .footer {
-  border-top: 1px solid #333;
-  padding-top: 40px;
+
+  padding-top: 10px;
 }
 
 .footer-top {
@@ -1127,8 +1129,8 @@ body {
 .footer-bottom {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #333;
-  padding-top: 25px;
+  border-top: 1px solid white;
+  padding-top: 10px;
   font-size: 0.9rem;
   color: #888;
 }
